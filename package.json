@@ -1,0 +1,50 @@
+{
+  "name": "vicafestock",
+  "version": "1.0.0",
+  "description": "ViCAFE product stock update",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "watch": "nodemon --exec electron .",
+    "build": "electron-builder -m"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manjurulhasan/vicafe-stock.git"
+  },
+  "keywords": [
+    "vicafe",
+    "erp",
+    "stock",
+    "desktop",
+    "electron"
+  ],
+  "author": "Manjurul Hasan Shajib",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manjurulhasan/vicafe-stock/issues"
+  },
+  "homepage": "https://github.com/manjurulhasan/vicafe-stock#readme",
+  "dependencies": {
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "electron": "^21.2.2",
+    "electron-builder": "^23.6.0",
+    "nodemon": "^2.0.20"
+  },
+  "build": {
+    "appId": "ch.selise.vicafe",
+    "copyright": "Copyright Selise.ch",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "dmg"
+    },
+    "win": {
+      "target": "zip"
+    },
+    "linux": {
+      "category": "Utility"
+    }
+  }
+}
