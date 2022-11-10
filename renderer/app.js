@@ -1,7 +1,8 @@
 const {ipcRenderer} = require('electron')
 let ean = document.getElementById('ean'),
     quantity = document.getElementById('quantity'),
-    submit = document.getElementById('submit')
+    submit = document.getElementById('submit'),
+    formsection = document.getElementById('form-section')
 
 ean.focus();
 
@@ -30,6 +31,14 @@ const toggleButton = () => {
         submit.style.opacity = 0.5
         submit.innerText = 'Request Processing....'
     }
+}
+
+const hideDisplay = () => {
+    formsection.style.display = 'none';
+}
+
+const showDisplay = () => {
+    formsection.style.display = 'block';
 }
 
 
@@ -72,5 +81,22 @@ ipcRenderer.on('form-submit-success', (e,res) => {
         if(res.status === true){
             console.log(res.message)
         }
+    }
+})
+
+document.addEventListener('keydown', e => {
+    const notAllowedChars = [27, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 44, 19, 145, 45, 36, 33, 34, 35, 46, 144, 91, 16, 9, 20, 17, 18, 93, 8, 37, 39, 38, 40];
+    if(e.keyCode === 13){
+        e.preventDefault();
+    }
+
+    //check if user pressed any functional key
+    if (notAllowedChars.includes(e.keyCode)) {
+    // if (notAllowedChars.indexOf(e.keyCode) > 0) {
+        console.log('not allowed');
+        return;
+    }else{
+        showDisplay()
+        console.log(e.key)
     }
 })
