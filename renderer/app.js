@@ -84,19 +84,25 @@ ipcRenderer.on('form-submit-success', (e,res) => {
     }
 })
 
-document.addEventListener('keydown', e => {
-    const notAllowedChars = [27, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 44, 19, 145, 45, 36, 33, 34, 35, 46, 144, 91, 16, 9, 20, 17, 18, 93, 8, 37, 39, 38, 40];
-    if(e.keyCode === 13){
-        e.preventDefault();
-    }
-
-    //check if user pressed any functional key
-    if (notAllowedChars.includes(e.keyCode)) {
-    // if (notAllowedChars.indexOf(e.keyCode) > 0) {
-        console.log('not allowed');
-        return;
-    }else{
-        showDisplay()
-        console.log(e.key)
-    }
-})
+// document.addEventListener('keydown', e => {
+//     const notAllowedChars = [27, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 44, 19, 145, 45, 36, 33, 34, 35, 46, 144, 91, 16, 9, 20, 17, 18, 93, 8, 37, 39, 38, 40];
+//     if(e.keyCode === 13){
+//         e.preventDefault();
+//     }
+//
+//     //check if user pressed any functional key
+//     if (notAllowedChars.includes(e.keyCode)) {
+//     // if (notAllowedChars.indexOf(e.keyCode) > 0) {
+//         console.log('not allowed');
+//         return;
+//     }else{
+//         if(e.keyCode !== 13){
+//             ean.value = ''
+//             var key = e.key
+//             ean.value = key
+//         }
+//         showDisplay()
+//         console.log(e.key)
+//         console.log(ean.value)
+//     }
+// })
