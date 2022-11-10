@@ -26,7 +26,7 @@ const createWindow = () => {
     mainWindow.loadFile('renderer/main.html')
 
     // Open the DevTools.
-    mainWindow.webContents.openDevTools()
+    // mainWindow.webContents.openDevTools()
 }
 
 appMenu()
